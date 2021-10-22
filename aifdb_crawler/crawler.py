@@ -25,6 +25,6 @@ def collect_araucaria(outdir: Path):
         print(f"{i}/{len(map_ids)}")
         map_url = JSON_URL_TEMPLATE.format(map_id)
         r = requests.get(map_url)
-        out_file = outdir / 'map{map_id}.json'
+        out_file = outdir / f'map{map_id}.json'
         with open(out_file, 'w') as f:
             json.dump(r.json(), f)
